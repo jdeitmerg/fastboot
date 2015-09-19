@@ -59,20 +59,41 @@ and thus needs its own PC download software. You can use
 and OS X or
 [UpdateLoader (German)](http://luani.de/projekte/updateloader/) on Windows.
 
-## Bugs
+## Supported devices
 
-Currently, only the ATmega168 is really thoroughly tested.  If you have
-success with other devices, please pass me a note so I can include them
-here.
+There's a list of supported devices in the Makefile, but you shouldn't
+trust it too much. If your MCU is not in the list, just try nonetheless ;)
+
+There surely are many devices out there running fastboot, but only the
+following ones were reported back to be working with this version of the
+software:
+* atmega168
+* atmega32
+* atmega324a
+* atmega328p
+* atmega48
+* atmega8
+* atmega88
+* atmega8515
+* attiny13a
+* attiny2313
+* attiny25
+* attiny84 (use fastboot for attiny85)
+* attiny85
+
+If you succeed in using this version on another device, please open a pull
+request / issue.
+
+## Bugs
 
 You don't need to be very adventurous to try with other devices, but some
 familiarity with the tools and with AVRs in general won't hurt and may be
-needed.  Be prepared for some problems to show up, especially for the
-current early releases.  If they do show up and if you have access to a
+needed. Be prepared for some problems to show up. If they do and you have
+access to a
 Windows machine to assemble the original, have a look at the Makefile
 section about the target 'cmp'.  It will allow you to compare the original
 with the Linux version, displaying in more detail where something went
-wrong.  Please include the result in case you're writing me for assistance.
+wrong.
 
 The directory structure may seem unintuitive.  It is a result of the build
 process: most of the original sources were auto-converted by a script, the

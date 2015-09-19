@@ -28,7 +28,7 @@
 # One of:
 # - at90s2313, at90s2323,
 #     at90s2333, at90s2343, at90s4414, at90s4433,
-#     at90s4434, at90s8515, at90c8534, at90s8535, at86rf401,
+#     at90s4434, at90c8534, at90s8535, at86rf401,
 #     attiny2313, attiny24, attiny44,
 #     attiny84, attiny25, attiny45, attiny85
 # - atmega103, atmega603, at43usb320,
