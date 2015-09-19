@@ -1,8 +1,7 @@
 # 
 # Makefile for Peter Dannegger's bootloader, to be used with the GNU
-# toolchest (as opposed to Atmel's Assembler).
+# toolchain (as opposed to Atmel's Assembler).
 #
-# Time-stamp: <2010-02-01 12:20:02 hcz>
 
 
 ####### user presets ##########################

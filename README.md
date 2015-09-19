@@ -1,7 +1,7 @@
 ## Description
 
-This is an adaption of Peter Dannegger's fine AVR Bootloader (Fastboot) for
-Linux and WinAVR.
+This is an adaptation of Peter Dannegger's fine AVR Bootloader (Fastboot)
+for Linux and WinAVR.
 
 
 ## New in Build #22
@@ -83,8 +83,8 @@ original as possible was the primary intention.
 
 ## Authors
 
-The bootloader 'Fastload' is written by Peter Dannegger.
+The bootloader 'fastboot' is written by Peter Dannegger.
 
-The Linux adaption was done by H. C. Zimmerer <hcz@hczim.de>.
+The Linux adaptation was done by H. C. Zimmerer <hcz@hczim.de>.
 
 Some small tweaks were made by J. Deitmerg (mowfask).
