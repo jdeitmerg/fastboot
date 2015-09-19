@@ -39,8 +39,9 @@
 #define  VERSION 0x0201
 
 #define  XTAL F_CPU	// 8MHz, not critical
-#define  BootDelay XTAL / 3	// 0.33s
-#define  BOOTDELAY XTAL / 3
+//Defined in Makefile as well:
+//#define  BootDelay XTAL / 3	// 0.33s
+//#define  BOOTDELAY XTAL / 3
 
 ;------------------------------	select UART mode -------------------------
 #if SRX == STX && SRX_PORT == STX_PORT

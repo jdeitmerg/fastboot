@@ -79,6 +79,10 @@ ATMEL_INC = m8def.inc
 #F_CPU = 14745600
 F_CPU = 8000000
 
+# Boot dealy. How many cycles after boot to wait for bootload request
+# In seconds: Boot_Delay/F_CPU
+Boot_Delay = 2000000
+
 #     AVR Studio 4.10 requires dwarf-2.
 #     gdb runs better with stabs
 #DEBUG = dwarf-2
@@ -104,6 +108,7 @@ CFLAGS += -L,-g$(DEBUG)
 CFLAGS += -DRAM_START=$(SRAM_START) -DSRAM_SIZE=$(SRAM_SIZE)
 CFLAGS += -DSTX_PORT=$(STX_PORT) -DSTX=$(STX)
 CFLAGS += -DSRX_PORT=$(SRX_PORT) -DSRX=$(SRX)
+CFLAGS += -DBootDelay=$(Boot_Delay) -DBOOTDELAY=$(Boot_Delay)
 
 # The following files were imported by a gawk script without user
 # intervention (in order to ease keeping up with future releases of
