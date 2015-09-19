@@ -46,6 +46,7 @@
 #     at90can32, at90can64, at90can128, at90usb82, at90usb162,
 #     at90usb646, at90usb647, at90usb1286, at90usb1287, at94k
 # - atmega2560, atmega2561
+# - atmega328, atmega328p
 #
 # Examples (select one of them or add your own):
 # MCU = atmega64
