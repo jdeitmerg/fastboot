@@ -57,12 +57,14 @@ MCU = atmega8
 # Name of the Atmel defs file for the actual MCU.
 #
 # They are part of AVR Studio (located in Windows at
-# \Programs\Atmel\AVR Tools\AvrAssembler2\Appnotes\*.inc).  
+# \Programs\Atmel\AVR Tools\AvrAssembler2\Appnotes\*.inc).
 #
-# You may choose to download AVR000.zip at
-# http://attiny.com/definitions.htm instead.  If you do so, just click
-# on the HERE in "Click HERE to download all the AVR definitions
-# files" and unzip it in the same directory as this Makefile.
+# The license agreement of AVR Studio prohibits the distribution of the
+# .inc files you need. You therefore have to download the whole AVR Studio
+# suite (several hundred MB, need to register at atmel.com) and install it
+# on a Windows system (getting version 6 to run under wine seems not to be
+# trivial) to get these files. You can try searching on the web, but
+# hostings of these files tend to disappear regularly.
 #
 # Examples (select one of them or add your own):
 # ATMEL_INC = m168def.inc
