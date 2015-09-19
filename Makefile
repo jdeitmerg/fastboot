@@ -186,7 +186,7 @@ endif
 atmel_def.h: $(ATMEL_INC) Makefile
 #        We use gawk instead of egrep here due to problems with
 #        WinAVR's egrep (which I didn't dive into):
-	./_conv.awk $< | gawk '/PAGESIZE|SIGNATURE_|SRAM_|FLASHEND|BOOT/' > $@
+	./conv.awk $< | gawk '/PAGESIZE|SIGNATURE_|SRAM_|FLASHEND|BOOT/' > $@
 
 atmel_def.mak: atmel_def.h
 	gawk '{ printf "%s = %s\n", $$2, $$3 }' $< > $@
@@ -262,7 +262,7 @@ cmp:  BOOTLOAD.02x bootload.02x
 #
 DISTFILES = $(AUTO_CONVERTED_FILES) $(MANUALLY_ADDED_FILES)
 DISTFILES += $(ADDITIONAL_DEPENDENCIES)
-DISTFILES += bootload.template.x diff2addr.sh README Makefile _conv.awk build_no
+DISTFILES += bootload.template.x diff2addr.sh README Makefile conv.awk build_no
 DISTFILES += get_text_addrs.sh get_bootsection_addrs.sh added/stub.S
 DISTFILES += get_avr_arch.sh
 
