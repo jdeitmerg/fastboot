@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #  This file is part of fastboot, an AVR serial bootloader.
 #  Copyright (C) 2010 Heike C. Zimmerer <hcz@hczim.de>
@@ -54,24 +54,30 @@ esac
 magic=";#magic1295671ghkl-."
 # call gcc, asking it for the command line which it would use for
 # linking:
-set -- $(avr-gcc -m"$mcu" -### "$1" -o "$magic" 2>&1 \
-         | gawk '/^avr-gcc:/||/ld.*'"$magic"'.*"-lgcc"/')
+# also works for gcc >= 5.2.0:
+gcc_result=$(avr-gcc -m$mcu -### "$1" -o "$magic" 2>&1)
 
-if [ "$1" = "avr-gcc:" ]; then
-    # we have an error message from gcc:
-    echo "$*"
+if [[ $gcc_result == avr-gcc* ]]; then
+    echo $gcc_result
+    echo >&2 "\
+    $pname: Could not find an architecture in avr-gcc's internal ld command line"
     exit 1
 fi
 
-# retrieve architecture argument from gcc's commandline (the argument
-# which follows '"-m"'):
-while [ -n "$2" ]; do
-    if [ "$1" = '"-m"' ]; then
-	eval echo $2		# eval: remove quotes
-	exit 0
+# $gcc_result contains e.g. -mavr4 or -m avr4. We need to extract the avr4:
+
+prev=""
+
+for gcc_arg in $gcc_result; do
+    if [[ $prev == -m ]]; then
+        echo $gcc_arg
+        exit 0
+    elif [[ $prev == -m* ]]; then
+        echo ${prev:2}
+        exit 0
     fi
-    shift
+    prev=$gcc_arg
 done
-echo >&2 "\
-$pname: Could not find an architecture in avr-gcc's internal ld command line"
+
+echo "Could not find an architecture in avr-gcc's internal ld command."
 exit 1
