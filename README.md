@@ -88,3 +88,10 @@ The bootloader 'fastboot' is written by Peter Dannegger.
 The Linux adaptation was done by H. C. Zimmerer <hcz@hczim.de>.
 
 Some small tweaks were made by J. Deitmerg (mowfask).
+
+## License
+
+'fastboot' was
+[released under the GPL](http://www.mikrocontroller.net/topic/73196?goto=848377#848377),
+so all the derivative work you see here is licensed under the GPL as well
+(see LICENSE file)
