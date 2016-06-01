@@ -199,7 +199,11 @@ stub.o: added/stub.S
 	avr-gcc -c -Wa,-adhlns=stub.lst $(CFLAGS) $< -o $@
 
 %.hex: %.elf
-	avr-objcopy -O ihex $< $@
+	# avr-objcopy might put a 0x03 record type into the resulting ihex
+	# file. Atmel Studio and other Windows tools might not like this.
+	# Circumvent by converting to binary first, then to ihex.
+	avr-objcopy -O binary $< $(<:.elf=.bin)
+	avr-objcopy -I binary -O ihex $(<:.elf=.bin) $@
 
 .PHONY: clean dbg
 
